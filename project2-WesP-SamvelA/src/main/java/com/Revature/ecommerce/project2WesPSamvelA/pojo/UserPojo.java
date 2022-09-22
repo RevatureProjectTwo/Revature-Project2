@@ -10,7 +10,7 @@ public class UserPojo
 	private String userAddress;
 	private String userEmail;
 	private String userContact;
-	private boolean userEmployee;
+	private String userEmployee;
 	
 	public UserPojo() 
 	{
@@ -27,7 +27,7 @@ public class UserPojo
 
 	public UserPojo(int userId, String userUserName, String userPassword, 
 					String userFirstName, String userLastName,String userAddress, 
-					String userEmail, String userContact, boolean userEmployee) 
+					String userEmail, String userContact, String userEmployee) 
 	{
 		super();
 		this.userId = userId;
@@ -121,23 +121,24 @@ public class UserPojo
 		this.userContact = userContact;
 	}
 
-	public boolean isUserEmployee() 
+	public String isUserEmployee() 
 	{
 		return userEmployee;
 	}
 
-	public void setUserEmployee(boolean userEmployee) 
+	public void setUserEmployee(String userEmployee) 
 	{
 		this.userEmployee = userEmployee;
 	}
 
 	@Override
-	public String toString() 
-	{
-		return "UserPojo [userId=" + userId + ", userUserName=" + userUserName + ", userFirstName=" + userFirstName
-				+ ", userLastName=" + userLastName + ", userAddress=" + userAddress + ", userEmail=" + userEmail
-				+ ", userContact=" + userContact + ", userEmployee=" + userEmployee + "]";
+	public String toString() {
+		return "UserPojo [userId=" + userId + ", userUserName=" + userUserName + ", userPassword=" + userPassword
+				+ ", userFirstName=" + userFirstName + ", userLastName=" + userLastName + ", userAddress=" + userAddress
+				+ ", userEmail=" + userEmail + ", userContact=" + userContact + ", userEmployee=" + userEmployee + "]";
 	}
+
+	
 
 	
 }

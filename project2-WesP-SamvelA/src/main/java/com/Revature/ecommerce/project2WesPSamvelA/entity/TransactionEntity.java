@@ -1,5 +1,6 @@
 package com.Revature.ecommerce.project2WesPSamvelA.entity;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -27,44 +28,31 @@ import lombok.ToString;
 @Setter
 @ToString
 @Entity
-@Table(name="cards_details")
-public class CardEntity 
+@Table(name="transaction_details")
+public class TransactionEntity 
 {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="card_id")
-	private int cardId;
+	@Column(name="trans_id")
+	private int transId;
 	
-	@Column(name="card_name")
-	private String cardName;
+	@Column(name="trans_user_id")
+	private int transUserId;
 	
-	@Column(name="card_type")
-	private String cardType;
+	@Column(name="trans_date")
+	private Date transDate;
 	
-	@Column(name="card_rarity")
-	private String cardRarity;
-	
-	@Column(name="card_set")
-	private String cardSet;
-	
-	@Column(name="card_value")
-	private double cardValue;
-	
-	@Column(name="card_quantity")
-	private int cardQuantity;
-	
-	@Column(name="card_url")
-	private String cardUrl;
+	@Column(name="trans_total_price")
+	private double transTotalPrice;
 	
 	@ManyToMany
 	@JoinTable
 	(
 		name="transaction_cards_details",
-		joinColumns = @JoinColumn(name="trans_cards_card_id"),
-		inverseJoinColumns = @JoinColumn(name="trans_cards_trans_id")
+		joinColumns = @JoinColumn(name="trans_cards_trans_id"),
+		inverseJoinColumns = @JoinColumn(name="trans_cards_card_id")
 		
 	)
-	private Set<CardEntity> allCards;
-
-	
+	private Set<TransactionEntity> allTransactions;
 }
+

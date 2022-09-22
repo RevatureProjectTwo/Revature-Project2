@@ -49,5 +49,5 @@ public class UserEntity
 	private String userContact;
 	
 	@Column(name="user_is_employee")
-	private boolean userEmployee;
+	private String userEmployee;
 }
