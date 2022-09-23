@@ -13,7 +13,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.Revature.ecommerce.project2WesPSamvelA.pojo.TransactionPojo;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -53,6 +56,6 @@ public class TransactionEntity
 		inverseJoinColumns = @JoinColumn(name="trans_cards_card_id")
 		
 	)
-	private Set<TransactionEntity> allTransactions;
+	private List<CardEntity> allCards;
 }
 

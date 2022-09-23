@@ -1,10 +1,15 @@
 package com.Revature.ecommerce.project2WesPSamvelA.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -32,4 +37,13 @@ public class CartEntity
 	
 	@Column(name="cart_value")
 	private double cartValue;
+	
+	@ManyToMany
+	@JoinTable
+	(
+			name="cart_cards_details",
+			joinColumns = @JoinColumn(name="cart_cards_cart_id"),
+			inverseJoinColumns = @JoinColumn(name="cart_cards_card_id")
+	)
+	private List<CardEntity> allCards;
 }

@@ -7,5 +7,5 @@ import com.Revature.ecommerce.project2WesPSamvelA.entity.CardEntity;
 @Repository
 public interface CardDao extends JpaRepository<CardEntity, Integer>
 {
-
+	CardEntity findById(int cardId);
 }

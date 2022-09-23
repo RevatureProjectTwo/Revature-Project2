@@ -26,7 +26,6 @@ public class CardController
 	public CardPojo addACard(@Valid @RequestBody CardPojo newCard)
 	{
 		return cardService.addNewCard(newCard);
-
 	}
 	
 	@GetMapping("/allCards")

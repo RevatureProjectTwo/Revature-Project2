@@ -64,7 +64,17 @@ public class CardEntity
 		inverseJoinColumns = @JoinColumn(name="trans_cards_trans_id")
 		
 	)
-	private Set<CardEntity> allCards;
+	private List<TransactionEntity> allTrans;
+	
+	@ManyToMany
+	@JoinTable
+	(
+			name="cart_cards_details",
+			joinColumns = @JoinColumn(name="cart_cards_card_id"),
+			inverseJoinColumns = @JoinColumn(name="cart_cards_cart_id")
+	)
+	private List<CartEntity> allCarts;
+	
 
 	
 }

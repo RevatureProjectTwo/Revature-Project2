@@ -15,6 +15,7 @@ public class CardPojo
 	private int cardQuantity;
 	private String cardUrl;
 	
+	
 	public CardPojo() {
 		super();
 		// TODO Auto-generated constructor stub

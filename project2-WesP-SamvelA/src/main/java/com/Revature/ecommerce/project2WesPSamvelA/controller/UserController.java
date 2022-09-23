@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.Revature.ecommerce.project2WesPSamvelA.pojo.CardPojo;
+import com.Revature.ecommerce.project2WesPSamvelA.pojo.CartPojo;
 import com.Revature.ecommerce.project2WesPSamvelA.pojo.TransactionPojo;
 import com.Revature.ecommerce.project2WesPSamvelA.pojo.UserPojo;
 import com.Revature.ecommerce.project2WesPSamvelA.service.UserService;
@@ -45,6 +47,13 @@ public class UserController
 		List<TransactionPojo> allTransactions = userService.viewAllOrders(userId);
 		return allTransactions;
 	}
+	
+	@PostMapping("addItem")
+	public CartPojo viewCurrentCart(@RequestBody CartPojo updatedCart, CardPojo addCard)
+	{
+		return userService.updateCart(updatedCart, addCard);
+	}
+	
 	
 	@PutMapping("/updateProfile")
 	public UserPojo updateProfile(@RequestBody UserPojo updatedUser)

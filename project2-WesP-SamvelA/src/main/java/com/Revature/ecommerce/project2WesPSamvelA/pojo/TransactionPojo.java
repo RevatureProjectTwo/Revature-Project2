@@ -1,7 +1,10 @@
 package com.Revature.ecommerce.project2WesPSamvelA.pojo;
 
 import java.sql.Date;
+import java.util.List;
 import java.util.Objects;
+
+import com.Revature.ecommerce.project2WesPSamvelA.entity.CardEntity;
 
 public class TransactionPojo 
 {
@@ -9,18 +12,24 @@ public class TransactionPojo
 	private int transUserId;
 	private Date transDate;
 	private double transTotalPrice;
+	private List<CardPojo> allCards;
+	
+	
+	
 	
 	public TransactionPojo() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public TransactionPojo(int transId, int transUserId, Date transDate, double transTotalPrice) {
+	public TransactionPojo(int transId, int transUserId, Date transDate, double transTotalPrice,
+			List<CardPojo> allCards) {
 		super();
 		this.transId = transId;
 		this.transUserId = transUserId;
 		this.transDate = transDate;
 		this.transTotalPrice = transTotalPrice;
+		this.allCards = allCards;
 	}
 
 	public int getTransId() {
@@ -55,30 +64,20 @@ public class TransactionPojo
 		this.transTotalPrice = transTotalPrice;
 	}
 
+	public List<CardPojo> getAllCards() {
+		return allCards;
+	}
+
+	public void setAllCards(List<CardPojo> allCards) {
+		this.allCards = allCards;
+	}
+
 	@Override
 	public String toString() {
 		return "TransactionPojo [transId=" + transId + ", transUserId=" + transUserId + ", transDate=" + transDate
-				+ ", transTotalPrice=" + transTotalPrice + "]";
+				+ ", transTotalPrice=" + transTotalPrice + ", allCards=" + allCards + "]";
 	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(transDate, transId, transTotalPrice, transUserId);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		TransactionPojo other = (TransactionPojo) obj;
-		return Objects.equals(transDate, other.transDate) && transId == other.transId
-				&& Double.doubleToLongBits(transTotalPrice) == Double.doubleToLongBits(other.transTotalPrice)
-				&& transUserId == other.transUserId;
-	}
+	
 	
 	
 	
