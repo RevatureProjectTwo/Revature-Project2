@@ -1,6 +1,7 @@
 package com.Revature.ecommerce.project2WesPSamvelA.entity;
 
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -43,7 +44,7 @@ public class TransactionEntity
 	private int transUserId;
 	
 	@Column(name="trans_date")
-	private Date transDate;
+	private LocalDate transDate;
 	
 	@Column(name="trans_total_price")
 	private double transTotalPrice;

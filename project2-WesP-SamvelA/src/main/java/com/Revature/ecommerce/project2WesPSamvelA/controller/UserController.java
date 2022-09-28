@@ -48,14 +48,24 @@ public class UserController
 		return allTransactions;
 	}
 	
-	@PostMapping("addItem")
-	public CartPojo viewCurrentCart(@RequestBody CartPojo updatedCart, CardPojo addCard)
+	@GetMapping("viewCart/{uid}")
+	public CartPojo viewCurrentCart(@PathVariable ("uid")int cartId)
 	{
-		return userService.updateCart(updatedCart, addCard);
+		return userService.viewCart(cartId);
 	}
 	
+	@PostMapping("submitOrder")
+	public CartPojo submitOrder(@RequestBody CartPojo purchasedCart)
+	{
+		return userService.updateTransactions(purchasedCart);
+	}
 	
-	@PutMapping("/updateProfile")
+	@PostMapping("updateCart")
+	public CartPojo updateCart(@RequestBody CartPojo updatedCart)
+	{
+		return userService.updateCart(updatedCart);
+	}
+	@PostMapping("/updateProfile")
 	public UserPojo updateProfile(@RequestBody UserPojo updatedUser)
 	{
 		

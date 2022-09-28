@@ -6,7 +6,6 @@ import java.util.Objects;
 public class CartPojo 
 {
 	private int cartId;
-	private List<CardPojo> cartItems;
 	private int cartUserId;
 	private double cartValue;
 	private List<CardPojo> allCards;
@@ -14,10 +13,9 @@ public class CartPojo
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public CartPojo(int cartId, List<CardPojo> cartItems, int cartUserId, double cartValue, List<CardPojo> allCards) {
+	public CartPojo(int cartId, int cartUserId, double cartValue, List<CardPojo> allCards) {
 		super();
 		this.cartId = cartId;
-		this.cartItems = cartItems;
 		this.cartUserId = cartUserId;
 		this.cartValue = cartValue;
 		this.allCards = allCards;
@@ -27,12 +25,6 @@ public class CartPojo
 	}
 	public void setCartId(int cartId) {
 		this.cartId = cartId;
-	}
-	public List<CardPojo> getCartItems() {
-		return cartItems;
-	}
-	public void setCartItems(List<CardPojo> cartItems) {
-		this.cartItems = cartItems;
 	}
 	public int getCartUserId() {
 		return cartUserId;
@@ -54,8 +46,8 @@ public class CartPojo
 	}
 	@Override
 	public String toString() {
-		return "CartPojo [cartId=" + cartId + ", cartItems=" + cartItems + ", cartUserId=" + cartUserId + ", cartValue="
-				+ cartValue + ", allCards=" + allCards + "]";
-	}	
+		return "CartPojo [cartId=" + cartId + ", cartUserId=" + cartUserId + ", cartValue=" + cartValue + ", allCards="
+				+ allCards + "]";
+	}
 	
 }

@@ -18,6 +18,10 @@ public interface UserService
 
 	UserPojo updateProfile(UserPojo updatedUser);
 
-	CartPojo updateCart(CartPojo updatedCart, CardPojo addCard);
+	CartPojo viewCart(int userId);
+
+	CartPojo updateCart(CartPojo cartPojo);
+
+	CartPojo updateTransactions(CartPojo purchasedCart);
 
 }

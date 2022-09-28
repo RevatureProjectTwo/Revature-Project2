@@ -1,6 +1,7 @@
 package com.Revature.ecommerce.project2WesPSamvelA.pojo;
 
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Objects;
 
@@ -10,7 +11,7 @@ public class TransactionPojo
 {
 	private int transId;
 	private int transUserId;
-	private Date transDate;
+	private LocalDate transDate;
 	private double transTotalPrice;
 	private List<CardPojo> allCards;
 	
@@ -22,7 +23,7 @@ public class TransactionPojo
 		// TODO Auto-generated constructor stub
 	}
 
-	public TransactionPojo(int transId, int transUserId, Date transDate, double transTotalPrice,
+	public TransactionPojo(int transId, int transUserId, LocalDate transDate, double transTotalPrice,
 			List<CardPojo> allCards) {
 		super();
 		this.transId = transId;
@@ -48,11 +49,11 @@ public class TransactionPojo
 		this.transUserId = transUserId;
 	}
 
-	public Date getTransDate() {
+	public LocalDate getTransDate() {
 		return transDate;
 	}
 
-	public void setTransDate(Date transDate) {
+	public void setTransDate(LocalDate transDate) {
 		this.transDate = transDate;
 	}
 
